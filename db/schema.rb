@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329210619) do
+ActiveRecord::Schema.define(version: 20170329214726) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -72,6 +72,28 @@ ActiveRecord::Schema.define(version: 20170329210619) do
     t.string "away_team"
     t.string "home_team"
     t.string "location"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string  "name"
+    t.string  "city"
+    t.integer "wins"
+    t.integer "losses"
+    t.string  "win_pct"
+    t.integer "pts"
+    t.string  "ppg"
+    t.string  "fg_pct"
+    t.string  "fg_3pt_pct"
+    t.integer "reb"
+    t.string  "reb_pg"
+    t.integer "off_reb"
+    t.string  "off_reb_pg"
+    t.integer "ast"
+    t.string  "ast_pg"
+    t.integer "tov"
+    t.string  "tov_pg"
+    t.integer "stl"
+    t.string  "stl_pg"
   end
 
 end

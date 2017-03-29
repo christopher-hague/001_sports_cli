@@ -45,6 +45,7 @@ class Adapters::PlayerStats
     players = fetch_player_data["cumulativeplayerstats"]["playerstatsentry"]
     players.each do |val|
        p = create_player(val)
+       # pass p.attributs to circumvent having to manually insert data for each column
        Player.find_or_create_by(first_name: p.first_name, last_name: p.last_name,
         number: p.number, pos: p.pos , total_pts: p.total_pts, ppg: p.ppg, ast: p.ast, apg: p.apg,
         reb: p.reb, rpg: p.rpg, to: p.to, topg: p.topg, mins: p.mins, fg: p.fg, fg_att: p.fg_att,
@@ -55,4 +56,5 @@ class Adapters::PlayerStats
 
 end
 
+# runs the file
 Adapters::PlayerStats.new.seed_db
